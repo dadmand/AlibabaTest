@@ -1,3 +1,7 @@
+//-----------------------------------------------------------------------------------------------
+// AliBaba Tests
+//-----------------------------------------------------------------------------------------------
+
 // Selectors
 let inputPassengers='#search-panels > div.panels > div > div > form > div:nth-child(4) > div > input';
 let radioTwoWay='#search-panels > div.panels > div > div > form > div.gap > div > span:nth-child(2) > label'
@@ -18,89 +22,63 @@ let aboutUs='.site-footer__item a[href="/about-us"]'
 let trainTicker='#search-panels a[href="/train-ticket"]'
 let trainOriginPicker='[data-test=originPicker] > .form-control'
 
-// describe('Alibaba.ir IranIn', () => {
-//   context('Tehran-Mashhad',()=>{
-//     it('Search Tehran-Mashhad', () => {
-//         cy.visit('https://www.alibaba.ir',{timeout:100000});
-//         cy.get(radioTwoWay).click().should('be.visible');
-//         cy.get(originPicker).click().should('be.visible');
-//         cy.get(originPickerSelectTehran).click()
-//         cy.get(destinationPicker).click().should('be.visible');
-//         cy.get(destinationPickerMashhad).click()
-//         cy.get(datePickerDay24).click().should('be.visible');
-//         cy.get(datePickerDa27).click().should('be.visible');
-//         cy.get(datePickerConfirm).click();
-//         cy.get(passengerPicker).click();
-//         cy.get(passengerPickerIncrease).dblclick();
-//         cy.get(passengerPickerIncrease).dblclick();
-//         cy.get(passengerPickerIncrease).dblclick();
-//         cy.get(passengerPickerIncrease).click();
-//         cy.get(searchButton).click();
-//       });
-//       it('Get Results Tehran-Mashhad [ have Results ]', {timeout: 100000}, () => {
-//         cy.wait(20000); //wait for page load 
-//         cy.get(resultsExist).should('to.exist');
-//       });
-//       it('Scroll to About Us link and clicked',()=>{
-//         cy.get(aboutUs).scrollIntoView();
-//         cy.wait(10000);
-//         cy.get(aboutUs).click();
-//       });
-//   });
-//   context('Tehran-Noshahr',()=>{
-//     it('Search Tehran-Noshahr', () => {
-//         cy.visit('https://www.alibaba.ir',{timeout:100000});
-//         cy.get(radioTwoWay).click().should('be.visible');
-//         cy.get(originPicker).click().should('be.visible');
-//         cy.get(originPickerSelectTehran).click()
-//         cy.get(destinationPicker).click().should('be.visible');
-//         cy.get(destinationPickerNoshahr).click()
-//         cy.get(datePickerDay24).click().should('be.visible');
-//         cy.get(datePickerDa27).click().should('be.visible');
-//         cy.get(datePickerConfirm).click();
-//         cy.get(passengerPicker).click();
-//         cy.get(passengerPickerIncrease).dblclick();
-//         cy.get(passengerPickerIncrease).dblclick();
-//         cy.get(passengerPickerIncrease).dblclick();
-//         cy.get(passengerPickerIncrease).click();
-//         cy.get(searchButton).click();
-//       });
-//       it('Get Results Tehran-Mashhad [ empty results with retry ]', {retries: 3}, () => {
-//         cy.wait(20000); //wait for page load 
-//         const attempt = Cypress._.get(cy.state('runnable'), '_currentRetry', 0);
-//         if(attempt==0) {
-//             cy.get(resultsExist).should('to.exist');
-//         } else {
-//           cy.get(resultsNextDay).click();
-//           cy.get(resultsExist).should('to.exist');
-//         } 
-//       });
-//   });
-// });
-
-describe('Alibaba.ir Iran Train', () => {
+describe('Alibaba.ir IranIn', () => {
   context('Tehran-Mashhad',()=>{
     it('Search Tehran-Mashhad', () => {
         cy.visit('https://www.alibaba.ir',{timeout:100000});
-        cy.get(trainTicker).click().should('be.visible');
         cy.get(radioTwoWay).click().should('be.visible');
-        // cy.get(trainOriginPicker).click().should('be.visible');
-        // cy.get(originPickerSelectTehran).click()
-        // cy.get(destinationPicker).click().should('be.visible');
-        // cy.get(destinationPickerMashhad).click()
-        // cy.get(datePickerDay24).click().should('be.visible');
-        // cy.get(datePickerDa27).click().should('be.visible');
-        // cy.get(datePickerConfirm).click();
-        // cy.get(passengerPicker).click();
-        // cy.get(passengerPickerIncrease).dblclick();
-        // cy.get(passengerPickerIncrease).dblclick();
-        // cy.get(passengerPickerIncrease).dblclick();
-        // cy.get(passengerPickerIncrease).click();
-        // cy.get(searchButton).click();
+        cy.get(originPicker).click().should('be.visible');
+        cy.get(originPickerSelectTehran).click()
+        cy.get(destinationPicker).click().should('be.visible');
+        cy.get(destinationPickerMashhad).click()
+        cy.get(datePickerDay24).click().should('be.visible');
+        cy.get(datePickerDa27).click().should('be.visible');
+        cy.get(datePickerConfirm).click();
+        cy.get(passengerPicker).click();
+        cy.get(passengerPickerIncrease).dblclick();
+        cy.get(passengerPickerIncrease).dblclick();
+        cy.get(passengerPickerIncrease).dblclick();
+        cy.get(passengerPickerIncrease).click();
+        cy.get(searchButton).click();
       });
-      // it('Get Results Tehran-Mashhad', {timeout: 100000}, () => {
-      //   cy.wait(20000); //wait for page load 
-      //   cy.get(resultsExist).should('to.exist');
-      // });
+      it('Get Results Tehran-Mashhad [ have Results ]', {timeout: 100000}, () => {
+        cy.wait(20000); //wait for page load 
+        cy.get(resultsExist).should('to.exist');
+      });
+      it('Scroll to About Us link and clicked',()=>{
+        cy.get(aboutUs).scrollIntoView();
+        cy.wait(10000);
+        cy.get(aboutUs).click();
+      });
+  });
+  context('Tehran-Noshahr',()=>{
+    it('Search Tehran-Noshahr', () => {
+        cy.visit('https://www.alibaba.ir',{timeout:100000});
+        cy.get(radioTwoWay).click().should('be.visible');
+        cy.get(originPicker).click().should('be.visible');
+        cy.get(originPickerSelectTehran).click()
+        cy.get(destinationPicker).click().should('be.visible');
+        cy.get(destinationPickerNoshahr).click()
+        cy.get(datePickerDay24).click().should('be.visible');
+        cy.get(datePickerDa27).click().should('be.visible');
+        cy.get(datePickerConfirm).click();
+        cy.get(passengerPicker).click();
+        cy.get(passengerPickerIncrease).dblclick();
+        cy.get(passengerPickerIncrease).dblclick();
+        cy.get(passengerPickerIncrease).dblclick();
+        cy.get(passengerPickerIncrease).click();
+        cy.get(searchButton).click();
+      });
+      it('Get Results Tehran-Mashhad [ empty results with retry ]', {retries: 3}, () => {
+        cy.wait(20000); //wait for page load 
+        const attempt = Cypress._.get(cy.state('runnable'), '_currentRetry', 0);
+        if(attempt==0) {
+            cy.get(resultsExist).should('to.exist');
+        } else {
+          cy.get(resultsNextDay).click();
+          cy.get(resultsExist).should('to.exist');
+        } 
+      });
   });
 });
+
